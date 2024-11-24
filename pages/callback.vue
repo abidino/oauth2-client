@@ -20,13 +20,11 @@ onMounted(async () => {
   }
 
   try {
-    // GitHub API'den dönecek yanıtın tipini belirtiyoruz
     const response = await $fetch<GitHubUser>("/api/auth", {
       method: "POST",
       body: { code, state },
     });
 
-    // response artık GitHubUser tipine sahip
     console.log(response);
     navigateTo.push("/");
   } catch (error) {

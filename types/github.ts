@@ -5,5 +5,4 @@ export interface GitHubUser {
   html_url: string;
   name: string;
   email: string;
-  // Diğer alanları da buraya ekleyebilirsiniz
 }

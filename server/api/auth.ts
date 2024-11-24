@@ -1,4 +1,4 @@
-import { GitHubUser } from "../../types/github"; // GitHubUser arayüzünü içe aktarın
+import { GitHubUser } from "../../types/github";
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
@@ -23,12 +23,11 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, message: "Invalid token response" });
   }
 
-  // GitHub API'den kullanıcı bilgilerini alıyoruz
   const userInfo: GitHubUser = await $fetch("https://api.github.com/user", {
     headers: {
       Authorization: `Bearer ${response.access_token}`,
     },
   });
 
-  return userInfo; // response artık GitHubUser tipinde
+  return userInfo;
 });

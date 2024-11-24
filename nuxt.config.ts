@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
@@ -8,6 +7,6 @@ export default defineNuxtConfig({
       callbackUrl: process.env.GITHUB_CALLBACK_URL,
       baseUrl: process.env.BASE_URL,
     },
-    githubClientSecret: process.env.GITHUB_CLIENT_SECRET, // Bu sadece server tarafından erişilir
+    githubClientSecret: process.env.GITHUB_CLIENT_SECRET, 
   },
 });
